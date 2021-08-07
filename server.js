@@ -47,6 +47,7 @@ app.use('/user', userController)
 // Declaring Ports
 
 const PORT = process.env.PORT || 4000;
+const MONGODB_URL = process.env.MONGODB_URL; 
 
 // Database Connection
 
