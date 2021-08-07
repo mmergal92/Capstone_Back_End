@@ -2,7 +2,7 @@
   "name": "capstonebackend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server.js"
