@@ -41,8 +41,8 @@ app.get("/", (req, res) =>{
 
 // Controllers
 
-// const apiStockDataController = require('./controllers/ApiStock.js');
-// app.use('/api', apiStockDataController);
+const userController = require('./controllers/UserComment.js')
+app.use('/user', userController)
 
 // Declaring Ports
 
@@ -50,10 +50,10 @@ const PORT = process.env.PORT || 4000;
 
 // Database Connection
 
-// mongoose.connect(process.env.DATABASE_URL_TEST, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
-// mongoose.connection.once('open', () => {
-//     console.log('Linked to MongoDB')
-// })
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
+mongoose.connection.once('open', () => {
+    console.log('Linked to MongoDB')
+})
 
 // Server Listener
 
