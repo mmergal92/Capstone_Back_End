@@ -7,6 +7,6 @@ const UserCommentSchema = new mongoose.Schema({
     username: String,
 },{timestamps: true} );
 
-const userComment = mongoose.model('userComment', UserCommentSchema, 'UserComments');
+const userComment = mongoose.model('userComment', UserCommentSchema);
 
 module.exports = userComment;
