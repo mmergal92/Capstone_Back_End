@@ -25,7 +25,8 @@ router.use(express.json({
 // Index Route
 
 router.get('/', (req, res) =>{
-    console.log(req.session.test)
+    console.log(req.session.test);
+    console.log(req.params)
     userComment.find({}, (err, foundUserComments) => {
         res.json(foundUserComments)
         res.send('This page is for the user comments.')
@@ -44,8 +45,7 @@ router.post('/', (req, res) => {
     userComment.create([{
         date: new Date(Date.now()).toLocaleString(),
         comment: req.body.comment,
-        profilepic: req.body.profilepic,
-        username: req.body.username
+        username: req.body.username,
     }], (error, createdComment) => {
         console.log("comment created" + createdComment);
         if (error){
@@ -57,7 +57,7 @@ router.post('/', (req, res) => {
 });
 
 // Find route
-// router.get('/:symbol', async(req, res) =>{
+// router.get('/', async(req, res) =>{
 //     await userComment.find({symbol: req.params.symbol}, (error, foundComments)=>{
 //         console.log(req.params)
 //         console.log(foundComments)
