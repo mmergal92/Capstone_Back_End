@@ -34,6 +34,8 @@ app.use(session({
 // Routes
 
 app.get("/", (req, res) =>{
+    req.session.test = 'hey'
+    console.log(req.session.test)
     res.send("Server Working!");
 });
 
