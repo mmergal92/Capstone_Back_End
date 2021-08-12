@@ -33,13 +33,13 @@ router.get('/', (req, res) =>{
 })
 
 // Seed Data Route /project/seedprojects change the URL 
-router.get("/seedprojects", (req, res) =>{
-    projectOverview.create(projectseedData, (err, seedProjects) => {
-           console.log(seedProjects);
-        res.redirect("/");
-    })
-    console.log("seededproject")
-}); 
+// router.get("/seedprojects", (req, res) =>{
+//     projectOverview.create(projectseedData, (err, seedProjects) => {
+//            console.log(seedProjects);
+//         res.redirect("/");
+//     })
+//     console.log("seededproject")
+// }); 
 
 // POST COMMENTS
 router.post('/', (req, res) => {
@@ -47,14 +47,8 @@ router.post('/', (req, res) => {
         title: req.body.title,
         client: req.body.client,
         status: req.body.status,
-        dateUploaded: new Date(Date.now()).toLocaleString(),
-        dueDate: req.body.dueDate,
-        clientToDo: req.body.clientToDo,
         username: req.body.username,
-        onTrack: req.body.onTrack, 
-        approved: req.body.approved,
         Notes: req.body.Notes,
-        version: req.body.version,
     }], (error, createdProject) => {
         console.log("project created" + createdProject);
         if (error){
