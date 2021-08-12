@@ -34,13 +34,13 @@ router.get('/', (req, res) =>{
 })
 
 // Seed Data Route /project/seedprojects change the URL 
-router.get("/seedprojects", (req, res) =>{
-    projectOverview.create(projectseedData, (err, seedProjects) => {
-           console.log(seedProjects);
-        res.redirect("/");
-    })
-    console.log("seededproject")
-}); 
+// router.get("/seedprojects", (req, res) =>{
+//     projectOverview.create(projectseedData, (err, seedProjects) => {
+//            console.log(seedProjects);
+//         res.redirect("/");
+//     })
+//     console.log("seededproject")
+// }); 
 
 // POST COMMENTS
 router.post('/', (req, res) => {
