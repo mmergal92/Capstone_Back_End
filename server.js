@@ -45,7 +45,7 @@ app.get("/", (req, res) =>{
 const userController = require('./controllers/UserComment.js')
 app.use('/user', userController)
 
-const projectController = require('./controllers/projectBoard.js')
+const projectController = require('./controllers/ProjectBoard.js')
 app.use('/project', projectController)
 
 // const trelloController = require('./controllers/TrelloBoard.js')
