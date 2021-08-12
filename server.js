@@ -18,7 +18,7 @@ const app = express();
 
 
 //Importing Models
-const trelloData = require('./models/projects/trello.js')
+// const trelloData = require('./models/projects/trello.js')
 
 // Middleware 
 
@@ -45,8 +45,11 @@ app.get("/", (req, res) =>{
 const userController = require('./controllers/UserComment.js')
 app.use('/user', userController)
 
-const trelloController = require('./controllers/TrelloBoard.js')
-app.use('/trello', trelloController)
+const projectController = require('./controllers/projectBoard.js')
+app.use('/project', projectController)
+
+// const trelloController = require('./controllers/TrelloBoard.js')
+// app.use('/trello', trelloController)
 
 // Declaring Ports
 
