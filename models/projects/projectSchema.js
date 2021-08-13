@@ -14,6 +14,6 @@ const projectSchema = new mongoose.Schema({
     version: Number, 
 },{timestamps: true} );
 
-const projectOverview = mongoose.model('projectOverview', projectSchema);
+const projectOverview = mongoose.model('projectOverview', projectSchema, 'ProjectOverviews');
 
 module.exports = projectOverview;

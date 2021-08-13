@@ -34,8 +34,8 @@ app.use(session({
 // Routes
 
 app.get("/", (req, res) =>{
-    // req.session.test = 'hey'
-    // console.log(req.session.test)
+    req.session.test = 'hey'
+    console.log(req.session.test)
     res.send("Server Working!");
 });
 
@@ -54,7 +54,7 @@ app.use('/project', projectController)
 // Declaring Ports
 
 const PORT = process.env.PORT || 4000;
-const MONGODB_URL = process.env.MONGODB_URL; 
+// const MONGODB_URL = process.env.MONGODB_URL; 
 
 // Database Connection
 

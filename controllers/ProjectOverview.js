@@ -49,6 +49,12 @@ router.post('/', (req, res) => {
         status: req.body.status,
         username: req.body.username,
         Notes: req.body.Notes,
+        dateUploaded: req.body.dateUploaded,
+        dueDate: req.body.dueDate,
+        clientToDo: req.body.clientToDo,
+        onTrack: req.body.onTrack, 
+        approved: req.body.approved,
+        version: req.body.version
     }], (error, createdProject) => {
         console.log("project created" + createdProject);
         if (error){
