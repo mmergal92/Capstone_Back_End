@@ -2,16 +2,13 @@
 
 const express = require('express');
 const router = express.Router();
-const app = express();
-const methodOverride = require('method-override');
-const fetch = require('node-fetch');
-let bodyParser = require('body-parser');
+// const methodOverride = require('method-override');
 
 // User Comment Collections
 const projectOverview = require('../models/projects/projectSchema.js');
 
 // const commentSeedData for seeding user comments:
-const projectseedData = require('../models/projects/projectseedData.js')
+// const projectseedData = require('../models/projects/projectseedData.js')
 // Middleware
 
 router.use(express.urlencoded({ extended: true}));
