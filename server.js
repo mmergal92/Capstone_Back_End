@@ -45,6 +45,9 @@ app.get("/", (req, res) =>{
 const userController = require('./controllers/UserComment.js')
 app.use('/user', userController)
 
+const projectsController = require('./controllers/ProjectBoard.js')
+app.use('/projects', projectsController)
+
 // const projectController = require('./controllers/ProjectOverview.js')
 // app.use('/project', projectController)
 
