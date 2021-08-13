@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
         client: req.body.client,
         status: req.body.status,
         username: req.body.username,
-        Notes: req.body.Notes,
+        notes: req.body.Notes,
         dateUploaded: req.body.dateUploaded,
         dueDate: req.body.dueDate,
         clientToDo: req.body.clientToDo,

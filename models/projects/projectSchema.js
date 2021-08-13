@@ -8,9 +8,9 @@ const projectSchema = new mongoose.Schema({
     dueDate: String,
     clientToDo: Array,
     username: String,
-    onTrack: Boolean, 
-    approved: Boolean,
-    Notes: String,
+    onTrack: String, 
+    approved: String,
+    notes: String,
     version: Number, 
 },{timestamps: true} );
 
