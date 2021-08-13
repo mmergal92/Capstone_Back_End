@@ -9,7 +9,7 @@ let bodyParser = require('body-parser');
 const projectOverview = require('../models/projects/projectSchema.js');
 
 // const projectseedData for seeding info :
-// const projectseedData = require('../models/projects/projectseedData.js')
+const projectseedData = require('../models/projects/projectseedData.js')
 // Middleware
 
 router.use(express.urlencoded({ extended: true}));
@@ -31,13 +31,13 @@ router.get('/', (req, res) =>{
 })
 
 // Seed Data Route /project/seedprojects change the URL 
-// router.get("/seedprojects", (req, res) =>{
-//     projectOverview.create(projectseedData, (err, seedProjects) => {
-//            console.log(seedProjects);
-//         res.redirect("/");
-//     })
-//     console.log("seededproject")
-// }); 
+router.get("/seedprojects", (req, res) =>{
+    projectOverview.create(projectseedData, (err, seedProjects) => {
+           console.log(seedProjects);
+        res.redirect("/");
+    })
+    console.log("seededproject")
+}); 
 
 // POST COMMENTS
 router.post('/', (req, res) => {
