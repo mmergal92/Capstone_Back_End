@@ -1,70 +1,70 @@
-// Importing Dependencies
+// // Importing Dependencies
 
-const express = require('express');
-const router = express.Router();
-const app = express();
-const methodOverride = require('method-override');
-const fetch = require('node-fetch');
-let bodyParser = require('body-parser');
+// const express = require('express');
+// const router = express.Router();
+// const app = express();
+// const methodOverride = require('method-override');
+// const fetch = require('node-fetch');
+// let bodyParser = require('body-parser');
 
-// User Comment Collections
-const projectOverview = require('../models/projects/projectSchema.js');
+// // User Comment Collections
+// const projectOverview = require('../models/projects/projectSchema.js');
 
-// const commentSeedData for seeding user comments:
-const projectseedData = require('../models/projects/projectseedData.js')
-// Middleware
+// // const commentSeedData for seeding user comments:
+// const projectseedData = require('../models/projects/projectseedData.js')
+// // Middleware
 
-router.use(express.urlencoded({ extended: true}));
-router.use(methodOverride('_method'));
-router.use(express.json({
-    type: ['application/json', 'text/plain']
-  }))
-  router.use(bodyParser.json());
+// router.use(express.urlencoded({ extended: true}));
+// router.use(methodOverride('_method'));
+// router.use(express.json({
+//     type: ['application/json', 'text/plain']
+//   }))
+//   router.use(bodyParser.json());
 
-// Index Route
+// // Index Route
 
-router.get('/', (req, res) =>{
-    console.log("test project");
-    console.log(req.params)
-    projectOverview.find({}, (err, foundProjects) => {
-        res.json(foundProjects)
-        console.log(foundProjects)
-})
-})
+// router.get('/', (req, res) =>{
+//     console.log("test project");
+//     console.log(req.params)
+//     projectOverview.find({}, (err, foundProjects) => {
+//         res.json(foundProjects)
+//         console.log(foundProjects)
+// })
+// })
 
-// Seed Data Route /project/seedprojects change the URL 
-// router.get("/seedprojects", (req, res) =>{
-//     projectOverview.create(projectseedData, (err, seedProjects) => {
-//            console.log(seedProjects);
-//         res.redirect("/");
+// // Seed Data Route /project/seedprojects change the URL 
+// // router.get("/seedprojects", (req, res) =>{
+// //     projectOverview.create(projectseedData, (err, seedProjects) => {
+// //            console.log(seedProjects);
+// //         res.redirect("/");
+// //     })
+// //     console.log("seededproject")
+// // }); 
+
+// // POST COMMENTS
+// router.post('/', (req, res) => {
+//     projectOverview.create([{
+//         title: req.body.title,
+//         client: req.body.client,
+//         status: req.body.status,
+//         username: req.body.username,
+//         Notes: req.body.Notes,
+//         dateUploaded: req.body.dateUploaded,
+//         dueDate: req.body.dueDate,
+//         clientToDo: req.body.clientToDo,
+//         onTrack: req.body.onTrack, 
+//         approved: req.body.approved,
+//         version: req.body.version
+//     }], (error, createdProject) => {
+//         console.log("project created" + createdProject);
+//         if (error){
+//             return console.log(error)
+//         }
 //     })
-//     console.log("seededproject")
-// }); 
-
-// POST COMMENTS
-router.post('/', (req, res) => {
-    projectOverview.create([{
-        title: req.body.title,
-        client: req.body.client,
-        status: req.body.status,
-        username: req.body.username,
-        Notes: req.body.Notes,
-        dateUploaded: req.body.dateUploaded,
-        dueDate: req.body.dueDate,
-        clientToDo: req.body.clientToDo,
-        onTrack: req.body.onTrack, 
-        approved: req.body.approved,
-        version: req.body.version
-    }], (error, createdProject) => {
-        console.log("project created" + createdProject);
-        if (error){
-            return console.log(error)
-        }
-    })
-    console.log (req.body)
-    console.log('testing post')
-});
+//     console.log (req.body)
+//     console.log('testing post')
+// });
 
 
-// EXPORT
-module.exports = router;
+// // EXPORT
+// module.exports = router;
