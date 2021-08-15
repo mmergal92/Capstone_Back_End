@@ -39,7 +39,6 @@ app.get("/", (req, res) =>{
     res.send("Server Working!");
 });
 
-
 // Controllers
 
 const userController = require('./controllers/UserComment.js')
@@ -51,8 +50,8 @@ app.use('/projects', projectsController)
 // const projectController = require('./controllers/ProjectOverview.js')
 // app.use('/project', projectController)
 
-// const trelloController = require('./controllers/TrelloBoard.js')
-// app.use('/trello', trelloController)
+const figmaAPI = require('./controllers/FigmaAPI.js')
+app.use('/figma', figmaAPI)
 
 // Declaring Ports
 
