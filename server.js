@@ -47,6 +47,9 @@ app.use('/user', userController)
 const projectsController = require('./controllers/ProjectBoard.js')
 app.use('/projects', projectsController)
 
+const inquiryController = require('./controllers/InquiryForm.js')
+app.use('/inquiry', inquiryController)
+
 // const projectController = require('./controllers/ProjectOverview.js')
 // app.use('/project', projectController)
 
