@@ -14,7 +14,7 @@ router.use(express.json({
   }))
   router.use(bodyParser.json());
 
-const FigmaAPIKey = "223832-df847e90-93c7-453b-a142-0c604761c897"
+const FigmaAPIKey = "225481-275addd6-e4b4-41be-8ca8-c8827e17bfab"
 const FigmaFileID = "GixSsF7GbinVsQXHdcOa6n"
 
 router.get('/frames', async function (req, res, next) {
