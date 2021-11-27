@@ -18,8 +18,7 @@ const app = express();
 
 
 //Importing Models
-
-// const rssFeed = require('./models/rssFeed.js')
+// const trelloData = require('./models/projects/trello.js')
 
 // Middleware 
 
@@ -35,25 +34,39 @@ app.use(session({
 // Routes
 
 app.get("/", (req, res) =>{
+    req.session.test = 'hey'
+    console.log(req.session.test)
     res.send("Server Working!");
 });
 
-
 // Controllers
 
-// const apiStockDataController = require('./controllers/ApiStock.js');
-// app.use('/api', apiStockDataController);
+const userController = require('./controllers/UserComment.js')
+app.use('/user', userController)
+
+const projectsController = require('./controllers/ProjectBoard.js')
+app.use('/projects', projectsController)
+
+const inquiryController = require('./controllers/InquiryForm.js')
+app.use('/inquiry', inquiryController)
+
+// const projectController = require('./controllers/ProjectOverview.js')
+// app.use('/project', projectController)
+
+const figmaAPI = require('./controllers/FigmaAPI.js')
+app.use('/figma', figmaAPI)
 
 // Declaring Ports
 
 const PORT = process.env.PORT || 4000;
+// const MONGODB_URL = process.env.MONGODB_URL; 
 
 // Database Connection
 
-// mongoose.connect(process.env.DATABASE_URL_TEST, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
-// mongoose.connection.once('open', () => {
-//     console.log('Linked to MongoDB')
-// })
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
+mongoose.connection.once('open', () => {
+    console.log('Linked to MongoDB')
+})
 
 // Server Listener
 
